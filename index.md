@@ -1,7 +1,7 @@
 
 <script type="text/javascript">
 
-    var timeOut = 4;
+    var timeOut = 1;
 
     var x = setInterval(function () {
         document.getElementById("timer").innerHTML = timeOut + " seconds";
@@ -22,4 +22,4 @@ _Hi_, I'm **Alen Alex**.
 
 You can find my tech/dev write-ups [here](/dev).
 
-You will be redirected to my dev page in <b id="timer"> 5 seconds</b>...
+You will be redirected to my dev page in <b id="timer"> 2 seconds</b>...
