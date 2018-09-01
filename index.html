@@ -4,17 +4,23 @@
     <script type="text/javascript">
 
         var timeOut = 5;
+        var shouldTimeout = true;
 
         var x = setInterval(function () {
-            document.getElementById("timer").innerHTML = timeOut + " seconds";
+            if (shouldTimeout) {
+                document.getElementById("timer").innerHTML = timeOut + " seconds";
 
-            if (timeOut == 0) {
-                window.location = "/dev";
+                if (timeOut == 0) {
+                    window.location = "/dev";
+                }
+                timeOut--;
+
             }
-            timeOut--;
+        }, 1000);
 
+        function onStopTimeoutClick() {
+            shouldTimeout = false;
         }
-            , 1000);
     </script>
 </head>
 
@@ -40,7 +46,8 @@
                 <a href=https://www.twitter.com/alenjalex><img src="assets\images\ico\twitter.png" height=30 width=30 alt="twitter"
                     /></a>
                 &nbsp;
-                <a href=mailto:alen.alex@outlook.com><img src="assets\images\email.png" height=30 width=30 alt="email" /></a>
+                <a href=mailto:alen.alex@outlook.com><img src="assets\images\ico\email.png" height=30 width=30 alt="email"
+                    /></a>
             </p>
 
             <br/>
@@ -49,9 +56,10 @@
             <br/>
             <br/>
 
-            <center>
-                You can find my tech/dev write-ups [here](/dev). You will be redirected to my dev page in <b id="timer">
-                5 seconds</b>...
-                </left>
+    </center>
+    <p>You can find my tech/dev write-ups <a href="/dev">here</a>. </p>
+    <p>You will be redirected to my dev page in <b id="timer">5 seconds</b>...</p>
+    <p><button onclick="onStopTimeoutClick()">Stop Timer</button></p>
+    
 </body>
 </html>
