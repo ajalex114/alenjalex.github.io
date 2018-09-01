@@ -20,6 +20,8 @@
 
         function onStopTimeoutClick() {
             shouldTimeout = false;
+            document.getElementById("timer").innerHTML = "";
+            document.getElementById("stopTimer").disabled = true;
         }
     </script>
 </head>
@@ -58,8 +60,8 @@
 
     </center>
     <p>You can find my tech/dev write-ups <a href="/dev">here</a>. </p>
-    <p>You will be redirected to my dev page in <b id="timer">5 seconds</b>...</p>
-    <p><button onclick="onStopTimeoutClick()">Stop Timer</button></p>
-    
+    <p id="redirectText">You will be redirected to my dev page in <b id="timer">5 seconds</b>...</p>
+    <p><button id="stopTimer" onclick="onStopTimeoutClick()">Stop Timer</button></p>
+
 </body>
 </html>
